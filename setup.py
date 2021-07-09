@@ -25,5 +25,5 @@ setuptools.setup(
     packages=setuptools.find_packages(where="src"),
     python_requires=">=3.6",
     install_requires=[
-        'numpy', 'scipy', 'scikit-learn', 'skl2onnx', 'sklearn_plugins', 'yellowbrick'
+        'numpy', 'scipy', 'scikit-learn', 'skl2onnx', 'sklearn_plugins', 'yellowbrick', 'overrides'
     ])
