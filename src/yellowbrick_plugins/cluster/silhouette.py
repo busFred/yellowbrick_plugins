@@ -21,17 +21,7 @@ class SphericalSilhouetteVisualizer(SilhouetteVisualizer):
                  colors=None,
                  is_fitted="auto",
                  **kwargs):
-
-        # Initialize the visualizer bases
         super().__init__(estimator, ax, colors, is_fitted, **kwargs)
-
-        # Visual Properties
-        # Use colors if it is given, otherwise attempt to use colormap which
-        # which will override colors. If neither is found, default to None.
-        # The colormap may yet still be found in resolve_colors
-        self.colors = colors
-        if "colormap" in kwargs:
-            self.colors = kwargs["colormap"]
 
     @overrides
     def fit(self, X, y=None, **kwargs):
