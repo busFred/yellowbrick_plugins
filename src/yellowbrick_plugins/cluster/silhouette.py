@@ -1,8 +1,13 @@
+"""Implementation of silhouette visualizer for SphericalKMeans.
+"""
 from overrides import overrides
 from sklearn.metrics import silhouette_samples, silhouette_score
 from sklearn_plugins.cluster import SphericalKMeans
 from yellowbrick.cluster import SilhouetteVisualizer
 from yellowbrick.utils import check_fitted
+
+__author__ = "Hung-Tien Huang"
+__copyright__ = "Copyright 2021, Hung-Tien Huang"
 
 __all__ = ["SphericalSilhouetteVisualizer"]
 
@@ -10,9 +15,9 @@ __all__ = ["SphericalSilhouetteVisualizer"]
 class SphericalSilhouetteVisualizer(SilhouetteVisualizer):
     """Visualize Silhouette performance for SphericalKMeans.
 
-    SpehricalKMeans first transfrom the input with principal component analysis (PCA) and then calculates centroids based on the transformed input. However, `yellowbrick.cluster.KElbowVisualizer` calculates the metrics based on inputs prior to principal component analysis.
+    SpehricalKMeans first transfrom the input with principal component analysis (PCA) and then calculates centroids based on the transformed input. However, `yellowbrick.cluster.SilhouetteVisualizer` calculates the metrics based on inputs prior to principal component analysis.
 
-    In `SphericalKElbowVisualizer` is designed to fix abovementioned phenomena for `SphericalKMeans`. The `SphericalKElbowVisualizer.fit` method is overridden so that function `self.scoring_metric` can have X argument equla to `self.estimator.preprocess_input(X)`.
+    In `SphericalSilhouetteVisualizer` is designed to fix abovementioned phenomena for `SphericalKMeans`. The `SphericalSilhouetteVisualizer.fit` method is overridden so that function `self.scoring_metric` can have X argument equal to `self.estimator.preprocess_input(X)`.
     """
 
     def __init__(self,
