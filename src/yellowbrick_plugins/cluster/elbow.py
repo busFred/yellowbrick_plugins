@@ -7,6 +7,9 @@ from yellowbrick.cluster import KElbowVisualizer
 from yellowbrick.exceptions import YellowbrickWarning
 from yellowbrick.utils import KneeLocator
 
+## Packages for export
+__all__ = ["SphericalKElbowVisualizer"]
+
 
 class SphericalKElbowVisualizer(KElbowVisualizer):
     """Visualize elbow point for SphericalKMeans.
